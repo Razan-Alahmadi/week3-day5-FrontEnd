@@ -5,8 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { ApiService } from '../api.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { StoreService } from '../state/store.service'; // Import the StoreService
-import { Document } from '../state/store.model'; // Import the Document interface
+import { StoreService } from '../state/store.service'; 
+import { Document } from '../state/store.model'; 
 
 @Component({
   selector: 'app-document-upload',
@@ -17,7 +17,7 @@ import { Document } from '../state/store.model'; // Import the Document interfac
 })
 export class DocumentUploadComponent {
   document: Document = {
-    userId: 0, // Initialize with default values
+    userId: 0, // Initialize with default value
     title: '',
     filePath: '',
   };
@@ -28,7 +28,7 @@ export class DocumentUploadComponent {
   constructor(
     private apiService: ApiService,
     private router: Router,
-    public storeService: StoreService // Change to public
+    public storeService: StoreService 
   ) {}
 
   onSubmit(form: any): void {
@@ -52,7 +52,7 @@ export class DocumentUploadComponent {
       },
       error: (error) => {
         console.error('Error uploading document:', error);
-        this.errorMessage = 'Failed to verify document. Please try again.'; // Provide user feedback
+        this.errorMessage = 'Failed to verify document. Please try again.'; 
       },
     });
   }
